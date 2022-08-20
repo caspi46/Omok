@@ -53,13 +53,6 @@ class OmokOmokTkInter:
                 else:
                     stones11 = 0
                     stones21 = 0
-                if stones11 == 5 or stones21 == 5:
-                    self.identifyPlayer(stones11, stones21)
-                    return True
-
-        for i in range(self.set - 4):
-            for j in range(self.set - i):
-
                 if self.omokTable[j][i + j] == 1:
                     stones12 += 1
                     stones22 = 0
@@ -69,6 +62,9 @@ class OmokOmokTkInter:
                 else:
                     stones12 = 0
                     stones22 = 0
+                if stones11 == 5 or stones21 == 5:
+                    self.identifyPlayer(stones11, stones21)
+                    return True
                 if stones12 == 5 or stones22 == 5:
                     self.identifyPlayer(stones12, stones22)
                     return True
@@ -92,12 +88,6 @@ class OmokOmokTkInter:
                 else:
                     stones11 = 0
                     stones21 = 0
-                if stones11 == 5 or stones21 == 5:
-                    self.identifyPlayer(stones11, stones21)
-                    return True
-
-        for i in range(self.set - 4):
-            for j in range(self.set - i):
                 if self.omokTable[j][self.set - 1 - j - i] == 1:
                     stones12 += 1
                     stones22 = 0
@@ -109,6 +99,9 @@ class OmokOmokTkInter:
                     stones22 = 0
                 if stones12 == 5 or stones22 == 5:
                     self.identifyPlayer(stones12, stones22)
+                    return True
+                if stones11 == 5 or stones21 == 5:
+                    self.identifyPlayer(stones11, stones21)
                     return True
 
         return False
@@ -245,5 +238,4 @@ class OmokOmokTkInter:
     def gameStart(self):
         self.askSet()
         self.root.mainloop()
-
 
