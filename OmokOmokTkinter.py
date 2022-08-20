@@ -1,6 +1,7 @@
 from tkinter import *
 from functools import partial
-from playsound import playsound
+#from pydub import AudioSegment
+#from pydub.playback import play
 
 # Rule Change:
 # the player must make a line with 5
